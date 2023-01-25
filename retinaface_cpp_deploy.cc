@@ -59,7 +59,12 @@ void DeployRetinaFaceExecutor() {
   tvm::runtime::PackedFunc run = gmod.GetFunction("run");
 
   // Use the C++ API
-  tvm::runtime::NDArray input_tensor = tvm::runtime::NDArray::Empty({1, 3, 320, 480}, DLDataType{kDLFloat, 32, 1}, dev);
+  // tvm::runtime::NDArray input_tensor = tvm::runtime::NDArray::Empty({1, 3, 320, 480}, DLDataType{kDLFloat, 32, 1}, dev);
+  DLTensor* input_tensor;
+  int64_t input_shape[4] = {1, 3, 320, 480};
+  
+  TVMArrayAlloc(input_shape, 4, kDLFloat, 32, 1, kDLCPU, 0, &input_tensor);
+  
   tvm::runtime::NDArray  locs = tvm::runtime::NDArray::Empty({1, 6300, 4}, DLDataType{kDLFloat, 32, 1}, dev);
   tvm::runtime::NDArray  confs = tvm::runtime::NDArray::Empty({1, 6300, 2}, DLDataType{kDLFloat, 32, 1}, dev);
   tvm::runtime::NDArray  ldmks = tvm::runtime::NDArray::Empty({1, 6300, 10}, DLDataType{kDLFloat, 32, 1}, dev);
