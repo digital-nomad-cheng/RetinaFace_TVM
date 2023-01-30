@@ -26,6 +26,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${DLPACK_HEADERS} ${DMLC_HEAD
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} -ltvm_runtime)
 
 set(EXECUTABLE_OUTPUT_PATH
-  "/home/vagrant/work/RetinaFace_TVM"
+  "/home/vagrant/work/RetinaFace_TVM/bin"
 )
 
