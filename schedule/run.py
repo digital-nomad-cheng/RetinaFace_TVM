@@ -46,7 +46,7 @@ for i, task in enumerate(tasks):
 log_file = "tune_result.json"
 tuner = auto_scheduler.TaskScheduler(tasks, task_weights, load_log_file=log_file)
 tune_option = auto_scheduler.TuningOptions(
-        num_measure_trials=200,  # change this to 20000 to achieve the best performance
+        num_measure_trials=20000,  # change this to 20000 to achieve the best performance
         runner=auto_scheduler.LocalRunner(repeat=10, enable_cpu_cache_flush=True),
         measure_callbacks=[auto_scheduler.RecordToFile(log_file)],
 )
