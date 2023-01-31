@@ -1,6 +1,5 @@
 import sys
 
-import cv2
 import tvm
 from tvm import relay, auto_scheduler
 from tvm.contrib import graph_executor
