@@ -10,7 +10,7 @@ You can just check `schedule/run.py` for exporting the two versions of runtime a
 all the C++ inference benchmark details. In a nutshell, on my machine(), the default schedule runtime
 is 27.56ms and the optimized schedule runtime is 23.97ms - almost 13% speedup.
 
-
+![result.jpg](https://github.com/digital-nomad-cheng/RetinaFace_TVM/blob/main/result.jpg)
 ## Main Contributions
 - Demonstrate how to use tvm runtime library under C++.
 - Benchmark tvm scheduler performance.
