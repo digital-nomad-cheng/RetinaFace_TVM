@@ -14,11 +14,11 @@ set(SRC
 )
 
 set(DLPACK_HEADERS
-  "/home/vagrant/tvm/3rdparty/dlpack/include"
+  "/home/vagrant/opt/tvm/3rdparty/dlpack/include"
 )
 
 set(DMLC_HEADERS
-  "/home/vagrant/tvm/3rdparty/dmlc-core/include"
+  "/home/vagrant/opt/tvm/3rdparty/dmlc-core/include"
 )
 
 add_executable(${PROJECT_NAME} ${SRC})
