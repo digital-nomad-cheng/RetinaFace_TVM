@@ -40,12 +40,13 @@ void RetinaFace::detect(const cv::Mat& image, std::vector<BBox>& final_bboxes) c
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    for (int i = 0; i < 100; i++) {
+    const int REPEAT_TIMES = 1000; 
+    for (int i = 0; i < REPEAT_TIMES; i++) {
         run();
     }
     end = std::chrono::system_clock::now();
     double elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    LOG(INFO) << "Elapsed time for running inference for 100 loops: " << elapsed_time; 
+    LOG(INFO) << "Elapsed time for running inference for " << REPEAT_TIMES << " loops: " << elapsed_time << std::endl;
     
     
     // get the output
